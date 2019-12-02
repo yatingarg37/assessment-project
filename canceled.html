@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Canceled Tarin</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/canceled.css">
+
+</head>
+<body style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('train1.jpg');">
+    <section >
+            <h1 style="text-align:center;color: #fff";>CANCELED TRAIN</h1>
+            <div class="div1" style="left: 43%;">
+            <input type="text" placeholder="Date(dd-mm-yyyy)" id="dt" style="text-align: center;padding: 10px;"/>
+ 
+        </div>
+        <input type="button" value="SUBMIT" onclick="function1()" class="btn" style="left: 43%;"/>
+        </section>
+        <div>
+            <p id="ans">  </p>
+            </div>
+        <script> 
+                function function1()
+                {
+                    var ans=document.getElementById("ans");
+                var dtee=document.getElementById("dt")
+                var url = "https://api.railwayapi.com/v2/cancelled/date/"+dtee+"/apikey/za87w1rrow/"
+                        var xhr = new XMLHttpRequest()
+                        xhr.open('GET',url)
+                        xhr.onreadystatechange = test
+                        function test() {
+                            if(this.status==200 && this .readyState==4) {
+                            var res_data = JSON.parse(this.responseText)
+                            console.log(typeof res_data)
+                            console.log(res_data)
+                            for(var i=0;i<trains.length;i++){
+                             var x=res_data.trains.name;
+                            
+                             ans.get_tag.append(x)
+                        }      }
+                        }                    
+                        xhr.send()
+                        }
+    </script>
+</body>
+</html>

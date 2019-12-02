@@ -1,0 +1,23 @@
+.Effect {
+    padding-top: 300px;
+    padding-left: 50px;
+}
+
+.btn {
+    border: 1px solid rgb(167, 159, 159);
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.5s;
+    position: relative;
+    overflow: hidden;
+
+}
+.lives,.trainnum ,.bt3,.cancel{
+    color: silver;
+}
+.lives:hover,.trainnum:hover ,.bt3:hover,.cancel:hover{
+    color: royalblue;
+}

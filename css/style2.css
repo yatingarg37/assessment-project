@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Century Gothic;
+}
+h1 {
+    padding-top: 50px;
+}
+.div1 {
+    position: relative;
+    padding-top: 50px;
+    left: 30%;
+}
+input [type=text] {
+    padding: 20px;
+}
+.btn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    transition: 0.5s;
+    left:40%;
+    top: 40%;
+}
+.btn:hover {
+    background: #fff;
+    color: black;
+}
+p{
+    border: 20px;
+    background-color: whitesmoke;
+    text-align: center;
+}

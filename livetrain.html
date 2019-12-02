@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>LIVE STATUS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/livetrain.css">
+
+</head>
+<body style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('train1.jpg');">
+    <section >
+            <h1 style="text-align:center;color: #fff";> WANT TO KNOW YOUR TRAIN'S STATUS</h1>
+            <div class="div1">
+            <input type="text" placeholder="Train Number" id="123" style="text-align: center;padding: 10px;"/>
+            <input type="text" placeholder="Station Code" id="stnc" style="text-align: center;padding: 10px;"/>
+            <input type="text" placeholder="Date(dd-mm-yyyy)" id="dt" style="text-align: center;padding: 10px;"/>
+            
+        </div>
+        <input type="button" value="SUBMIT" onclick="function1()" class="btn"/>
+        </section>
+        <section class="sec1">
+        <table>
+                <tr>
+                        <td>Train Name</td>
+                        <td id="nme"></td></tr>
+                <tr>
+                  <td>Position</td>
+                  <td id="post"></td>
+                </tr>
+                <tr>
+                  <td>Actual Arrival</td>
+                  <td id="act_arv"></td>
+                </tr>
+                <tr>
+                    <td>Scheduled Arrival</td>
+                    <td id="shd_arv"></td></tr>
+                <tr>
+                    <td>Actual Dept</td>
+                    <td id="act_dpt"></td></tr>
+                <tr>
+                    <td>Scheduled Dept</td>
+                    <td id="shd_dpt"></td></tr>
+                </table></section>
+<script> 
+function function1()
+{
+var t_nme=document.getElementById("nme")
+var t_post=document.getElementById("post")
+var t_act_arv=document.getElementById("act_arv")
+var t_shd_arv=document.getElementById("shd_arv")
+var t_act_dpt=document.getElementById("act_dpt")
+var t_shd_dpt=document.getElementById("shd_dpt")
+var train_num=document.getElementById("123").value
+var stn_code=document.getElementById("stnc").value
+var dte=document.getElementById("dt").value
+console.log(train_num);
+console.log(stn_code);
+console.log(dte);
+var url = "https://api.railwayapi.com/v2/live/train/"+train_num+"/station/"+stn_code+"/date/02-12-2019/apikey/za87w1rrow/"
+        var xhr = new XMLHttpRequest()
+        xhr.open('GET',url)
+        xhr.onreadystatechange = test
+        function test() {
+            if(this.status==200 && this .readyState==4) {
+            var res_data = JSON.parse(this.responseText)
+            console.log(typeof res_data)
+            console.log(res_data)
+             var x=res_data.position
+             var x1=res_data.station.name
+             var x2=res_data.status.actarr
+             var x3=res_data.status.scharr
+             var x4=res_data.status.actdep
+             var x5=res_data.status.schdep
+             t_nme.append(x1)
+             t_post.append(x)
+             t_act_arv.append(x2)
+             t_act_dpt.append(x4)
+             t_shd_arv.append(x3)
+             t_shd_dpt.append(x5)
+
+        }      
+        }                    
+        xhr.send()
+        }
+        </script>
+</body></html>

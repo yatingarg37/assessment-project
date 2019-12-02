@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>LIVE STATUS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/trainnum.css">
+
+</head>
+<body style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('train1.jpg');">
+    <section >
+            <h1 style="text-align:center;color: #fff";> WANT TO KNOW YOUR TRAIN'S NAME</h1>
+            <div class="div1" style="left:42%;">
+            <input type="text" placeholder="Train Number" id="123" style="text-align: center;padding: 10px;"/>
+        </div>
+        <input type="button" value="SUBMIT" onclick="function1()" class="btn"/>
+        <h1 class="tname">TRAIN NAME</h1>
+        <h1 id="ans"></h1>
+        <h1 class="tnum">TRAIN NUMBER</h1>
+        <h1 id="num"></h1>
+        </section>
+        <script> 
+                function function1()
+                {
+                    var name=document.getElementById("ans")
+                    var num=document.getElementById("num")
+                var trainnum=document.getElementById("123").value
+
+                var url = "https://api.railwayapi.com/v2/name-number/train/"+trainnum+"/apikey/5e011dpbza/"
+                        var xhr = new XMLHttpRequest()
+                        xhr.open('GET',url)
+                        xhr.onreadystatechange = test
+                        function test() {
+                            if(this.status==200 && this .readyState==4) {
+                            var res_data = JSON.parse(this.responseText)
+                            console.log(typeof res_data)
+                            console.log(res_data)
+                             var x=res_data.train.name
+                             var x1=res_data.train.number
+                             name.append(x)
+                             num.append(x1)
+                        }      
+                        }                    
+                        xhr.send()
+                        }
+                        </script>
+</body>
+</html>
