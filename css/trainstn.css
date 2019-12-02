@@ -54,3 +54,13 @@ td {
     text-align: center;
     padding: 10px;
 }
+#ans {
+    position: relative;
+    top: 100px;
+}
+p {
+    border: 1px solid black;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
