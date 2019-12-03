@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Century Gothic;
+}
+h1 {
+    padding-top: 50px;
+}
+.div1 {
+    position: relative;
+    padding-top: 50px;
+    left: 30%;
+}
+input [type=text] {
+    padding: 20px;
+}
+.btn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    transition: 0.5s;
+    left:40%;
+    top: 40%;
+}
+.btn:hover {
+    background: #fff;
+    color: black;
+}
+p{
+    border: 20px;
+    background-color: whitesmoke;
+    text-align: center;
+}
+#ans {
+    position: absolute;
+    top:300px;
+    left: 50%;
+    width: 20vw;
+    color:black;
+    text-align: center;
+    background-color: beige;
+    border: 1px solid white;
+}
+#num {
+   position: absolute;
+    top: 400px;
+    left: 50%;
+    width:20vw;
+    text-align: center;
+    background-color: beige;
+    border: 1px solid white;
+}
+#num1 {
+    position: absolute;
+     top: 500px;
+     left: 50%;
+     width:20vw;
+     text-align: center;
+     background-color: beige;
+     border: 1px solid white;
+ }
+.tname {
+    position: absolute;
+    top: 265px;
+    left: 25%;
+    color: silver;
+}
+.tnum {
+    position: absolute;
+    top: 27vw;
+    left: 25%;
+    color: silver;
+}
+.tnum1 {
+    position: absolute;
+    top: 33vw;
+    left: 25%;
+    color: silver;
+}
