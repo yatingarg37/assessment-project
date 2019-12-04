@@ -32,7 +32,6 @@
             if(this.status==200 && this .readyState==4) {
             var res_data = JSON.parse(this.responseText)
             console.log(res_data)
-            var x =res_data.data[0].price
             for(var i=0;i<15;i++){
                 var x2= res_data.data[i].gate;
                            var x =res_data.data[i].value;
