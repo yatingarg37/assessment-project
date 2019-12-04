@@ -37,9 +37,9 @@ var num1=document.getElementById("num1")
             if(this.status==200 && this .readyState==4) {
             var res_data = JSON.parse(this.responseText)
             console.log(res_data)
-            var x =res_data.data.AER[2].airline;
-            var x1 =res_data.data.AER[2].flight_number;
-            var x2 =res_data.data.AER[2].price;
+            var x =res_data.data.AGP[2].airline;
+            var x1 =res_data.data.AGP[2].flight_number;
+            var x2 =res_data.data.AGP[2].price;
             console.log(x)
             name.append(x)
                              num.append(x1)
